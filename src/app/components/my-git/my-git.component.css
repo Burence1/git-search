@@ -2,3 +2,12 @@
   border-radius: 50%;
   height: 10em;
 }
+
+.space{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+   /* align-items: flex-end;
+  align-content: space-around;*/
+  column-gap: 5rem; 
+}

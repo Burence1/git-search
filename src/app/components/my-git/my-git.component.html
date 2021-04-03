@@ -4,7 +4,9 @@
           <div class="card shadow p-3 mb-5 bg-white rounded card quote-card">
             <div class="cardbody">
               <div class="media">
-                <img src={{user.avatar_url}} class="myprofile" alt="...">
+                <div>
+                  <img src={{user.avatar_url}} class="myprofile" alt="...">
+                </div>
                 <div class="media-body">
                   <div>
                     <div label="User Info">
@@ -32,7 +34,7 @@
                       <input type="text" class="form-control" placeholder="Search by username" aria-describedby="button-addon2"
                         [(ngModel)]="username" name="username" style="background-color: transparent; color: white;">
                       <div class="input-group-append">
-                        <button type="submit" (click)="findProfile(); userForm.reset()">Search</button>
+                        <button class="btn btn-outline-secondary"  type="submit" (click)="findProfile(); userForm.reset()"><i class="bi bi-search"></i></button>
                       </div>
                     </div>
                   </form><br>
@@ -41,13 +43,14 @@
                       <input type="text" class="form-control" placeholder="Search by reponame" aria-describedby="button-addon2"
                         [(ngModel)]="reponame" name="reponame" style="background-color: transparent; color: white;">
                       <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="submit" (click)="findRepos(); repoForm.reset()">Search</button>
+                        <button class="btn btn-outline-secondary" type="submit" (click)="findRepos(); repoForm.reset()"><i class="bi bi-search"></i></button>
                       </div>
                     </div>
                   </form>
                 </div>
               </div>
             </div>
+            <div class="space">
             <div class="card shadow p-3 mb-5 bg-white rounded card quote-card" *ngFor="let repo of repos">
               <div class="cardbody">
                 <div class="tabcontent cards">
@@ -76,5 +79,5 @@
             </div>
         </div>
       </div>
+    </div>
   </div>
-

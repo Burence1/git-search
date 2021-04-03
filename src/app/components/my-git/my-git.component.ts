@@ -22,12 +22,12 @@ export class MyGitComponent implements OnInit {
   findProfile() {
     this.searchService.userInfoRequest(this.username)
     this.user = this.searchService.user
-    // this.searchService.userRepoRequest(this.username)
-    // this.repos = this.searchService.repos
+    this.searchService.userRepoRequest(this.username)
+    this.repos = this.searchService.repos
   }
 
   findRepos() {
-    // this.searchService.userRepoRequest(this.reponame)
+    // this.searchService.userInfoRequest(this.username)
     // this.repos = this.searchService.repos
     this.searchService.userRepoRequest(this.reponame)
     this.repos = this.searchService.repos

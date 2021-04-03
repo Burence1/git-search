@@ -81,20 +81,6 @@ export class SearchService {
       // }
 
       this.http.get<any>(`${environment.Apirepo}${reponame}/repos`).toPromise().then(response => {
-        // response.forEach(element => {
-        //   let repo = new Repos("", "", "", "", 0, new Date());
-
-        //   repo.name = element["name"]
-        //   repo.description = element["description"]
-        //   repo.language = response[i]["language"]
-        //   repo.html_url = response[i]["html_url"]
-        //   repo.forks = response[i]["forks"]
-
-        //   this.repos.push(repo)
-        //   resolve()
-        //   console.log(repo)
-        // });
-       
        
         for (let i = 0; i < response.length; i++) {
           let repo = new Repos("", "", "", "", 0, new Date());

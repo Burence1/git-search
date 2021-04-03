@@ -18,12 +18,12 @@ export class MyGitComponent implements OnInit {
 
   constructor(private searchService:SearchService) { }
 
-  findProfile() {
-    this.searchService.userInfoRequest(this.username)
-    this.user = this.searchService.user
-    this.searchService.userRepoRequest(this.username)
-    this.repos = this.searchService.repos
-  }
+  // findProfile() {
+  //   this.searchService.userInfoRequest(this.username)
+  //   this.user = this.searchService.user
+  //   this.searchService.userRepoRequest(this.username)
+  //   this.repos = this.searchService.repos
+  // }
 
   // findRepos() {
   //   this.searchService.userRepoRequest(this.reponame)
@@ -33,8 +33,8 @@ export class MyGitComponent implements OnInit {
   // }
 
   ngOnInit() {
-    this.searchService.userInfoRequest("Burence1")
-    this.user = this.searchService.user
+    // this.searchService.userInfoRequest("Burence1")
+    // this.user = this.searchService.user
     // this.searchService.userRepoRequest("Burence1")
     // this.repos = this.searchService.repos
   }

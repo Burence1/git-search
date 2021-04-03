@@ -1,5 +1,4 @@
 import { Repos } from './../../classes/repos';
-import { HttpClient } from '@angular/common/http';
 import { SearchService } from './../../services/search.service';
 import { Users } from './../../classes/users';
 import { Component, OnInit } from '@angular/core';
@@ -17,7 +16,7 @@ export class MyGitComponent implements OnInit {
   repos:Repos[];
   reponame:any;
 
-  constructor(private searchService:SearchService, private http:HttpClient) { }
+  constructor(private searchService:SearchService) { }
 
   findProfile() {
     this.searchService.userInfoRequest(this.username)
@@ -26,18 +25,18 @@ export class MyGitComponent implements OnInit {
     this.repos = this.searchService.repos
   }
 
-  findRepos() {
-    this.searchService.userRepoRequest(this.reponame)
-    this.repos = this.searchService.repos
+  // findRepos() {
+  //   this.searchService.userRepoRequest(this.reponame)
+  //   this.repos = this.searchService.repos
 
-    console.log(this.repos)
-  }
+  //   console.log(this.repos)
+  // }
 
   ngOnInit() {
     this.searchService.userInfoRequest("Burence1")
     this.user = this.searchService.user
-    this.searchService.userRepoRequest("Burence1")
-    this.repos = this.searchService.repos
+    // this.searchService.userRepoRequest("Burence1")
+    // this.repos = this.searchService.repos
   }
 
 }

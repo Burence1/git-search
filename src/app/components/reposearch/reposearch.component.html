@@ -1,1 +1,90 @@
-<p>reposearch works!</p>
+<div class="container-fluid">
+  <div>
+    <div class="card shadow p-3 mb-5 bg-white rounded card quote-card">
+      <div class="cardbody">
+        <!-- <div class="card shadow p-3 mb-5 bg-white rounded card quote-card" style="width: 18rem;">
+          <div class="cardbody">
+            <div>
+              <img src={{user.avatar_url}} class="myprofile" alt="...">
+            </div>
+            <div class="media-body">
+              <div>
+                <div label="User Info">
+                  <div class="tabcontent userInfo">
+                    <p *ngIf="user.name"><span>Name:</span>&nbsp;&nbsp;{{user.name}}</p>
+                    <p *ngIf="user.login"><span>Username:</span>&nbsp;&nbsp;{{user.login}}</p>
+                    <p><span>Followers:</span>&nbsp;&nbsp;{{user.followers}}</p>
+                    <p><span>Following:</span>&nbsp;&nbsp;{{user.following}}</p>
+                    <p *ngIf="user.public_repos"><span>Number of public
+                        repositories:</span>&nbsp;&nbsp;{{user.public_repos}}
+                    </p>
+                    <p *ngIf="user.bio"><span>Bio:</span>&nbsp;&nbsp;{{user.bio}}</p>
+                     <p *ngIf="user.created_at"><span>Created
+                                            on:</span>&nbsp;&nbsp;{{user.created_at|date}}&nbsp;({{user.created_at|daysAgo}}) days(s) ago</p>
+                    <p *ngIf="user.email"><span>Email:</span>&nbsp;&nbsp;{{user.email}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="card shadow p-3 mb-5 bg-white rounded card quote-card">
+          <div class="cardbody">
+            <!-- <form #userForm="ngForm">
+              <div class="input-group" style="width: 13rem">
+                <input type="text" class="form-control" placeholder="Search by username"
+                  aria-describedby="button-addon2" [(ngModel)]="username" name="username"
+                  style="background-color: transparent; color: white;">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="submit" (click)="findProfile(); userForm.reset()"><i
+                      class="bi bi-search"></i></button>
+                </div>
+              </div>
+            </form><br> -->
+            <form #repoForm="ngForm">
+              <div class="input-group" style="width: 13rem">
+                <input type="text" class="form-control" placeholder="Search by reponame"
+                  aria-describedby="button-addon2" [(ngModel)]="reponame" name="reponame"
+                  style="background-color: transparent; color: white;">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="submit" (click)="findRepos(); repoForm.reset()"><i
+                      class="bi bi-search"></i></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="space">
+        <div class="card shadow p-3 mb-5 bg-white rounded card quote-card" *ngFor="let repo of repos">
+          <div class="cardbody">
+            <div class="tabcontent cards">
+              <div class="card">
+                <div class="card-body">
+                  <div class="card-title"><a href={{repo.html_url}} target="_blank"
+                      appVisitedRepository>{{repo.name|titlecase}}</a>
+                  </div>
+                  <p class="card-text" *ngIf="repo.description">{{repo.description}}</p>
+                  <p class="card-text" *ngIf="!repo.description">No description is available for this repository</p>
+                  <small>Last updated on {{repo.updated_at|date}}</small><br>
+                  <div class="card-bottom">
+                    <div *ngIf="repo.language">
+                      <i class="fas fa-circle"></i>&nbsp;{{repo.language}}
+                    </div>&nbsp;&nbsp;
+                    <div *ngIf="!repo.language">
+                      <i class="fas fa-circle"></i>&nbsp;Undefined
+                    </div>&nbsp;&nbsp;
+                    <div>
+                      {{repo.forks}}&nbsp;<i class="fas fa-code-branch"></i>&nbsp;Forks
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

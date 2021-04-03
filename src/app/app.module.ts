@@ -1,3 +1,4 @@
+import { HeaderComponent } from './components/header/header/header.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -15,6 +16,7 @@ import { ReposearchComponent } from './components/reposearch/reposearch.componen
     SearchResultComponent,
     MyGitComponent,
     ReposearchComponent,
+    HeaderComponent
   
     
   ],

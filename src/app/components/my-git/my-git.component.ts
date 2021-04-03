@@ -27,8 +27,6 @@ export class MyGitComponent implements OnInit {
   }
 
   findRepos() {
-    // this.searchService.userInfoRequest(this.username)
-    // this.repos = this.searchService.repos
     this.searchService.userRepoRequest(this.reponame)
     this.repos = this.searchService.repos
 

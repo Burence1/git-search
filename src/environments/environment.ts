@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   ApiKey: 'https://api.github.com/users/',
-  Apirepo: 'https://api.github.com/search/repositories?q='
+  Apirepo: 'https://api.github.com/users/'
   // ApiKey: 'https://api.github.com/users/?access_token',
   // personalAccessTokens: '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',
 };

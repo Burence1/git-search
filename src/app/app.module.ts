@@ -7,12 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { MyGitComponent } from './components/my-git/my-git.component';
 import { FormsModule } from '@angular/forms';
+import { ReposearchComponent } from './components/reposearch/reposearch.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchResultComponent,
     MyGitComponent,
+    ReposearchComponent,
   
     
   ],

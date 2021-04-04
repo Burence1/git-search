@@ -80,7 +80,7 @@ export class SearchService {
       //   this.repos.pop()
       // }
 
-      this.http.get<any>(`${environment.Apirepo}${reponame}/repos`).toPromise().then(response => {
+      this.http.get<any>(`${environment.Apirepo}${reponame}/repositories`).toPromise().then(response => {
        
         for (let i = 0; i < response.length; i++) {
           let repo = new Repos("", "", "", "", 0, new Date());

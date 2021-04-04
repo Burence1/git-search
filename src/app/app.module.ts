@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReposearchComponent } from './components/reposearch/reposearch.component';
 import { UsersearchComponent } from './components/usersearch/usersearch.component';
-import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { HomeComponent } from './components/home/home.component';
     ReposearchComponent,
     HeaderComponent,
     UsersearchComponent,
-    HomeComponent,
   ],
   imports: [
     BrowserModule,

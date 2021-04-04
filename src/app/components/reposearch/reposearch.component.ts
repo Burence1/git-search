@@ -51,13 +51,13 @@ export class ReposearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.reponame = localStorage.getItem("datas");
-    if (this.reponame == null) {
-      this.reponame = "Burence1"
-    } else {
-      this.reponame = this.reponame
-    }
+    // if (this.reponame == null) {
+    //   this.reponame = "Burence1"
+    // } else {
+    //   this.reponame = this.reponame
+    // }
 
-    // this.searchService.userRepoRequest("Burence1")
+    this.searchService.userRepoRequest("Burence1")
     this.repos = this.searchService.repos
   }
 

@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReposearchComponent } from './components/reposearch/reposearch.component';
 import { UsersearchComponent } from './components/usersearch/usersearch.component';
+import { ClickedRepoDirective } from './Directives/clicked-repo.directive';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { UsersearchComponent } from './components/usersearch/usersearch.componen
     ReposearchComponent,
     HeaderComponent,
     UsersearchComponent,
+    ClickedRepoDirective,
   ],
   imports: [
     BrowserModule,

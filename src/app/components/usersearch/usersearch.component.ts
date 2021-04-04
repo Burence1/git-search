@@ -18,12 +18,12 @@ export class UsersearchComponent implements OnInit {
 
   constructor(private searchService: SearchService, private router: Router) {
     this.username = localStorage.getItem("datas");
-    if (this.username == null) {
-      this.username = "Burence1"
-    } else {
-      this.username = this.username
-    }
-    // this.username = this.username == null? "Burence1" : this.username
+    // if (this.username == null) {
+    //   this.username = "Burence1"
+    // } else {
+    //   this.username = this.username
+    // }
+    this.username = this.username == null? "Burence1" : this.username
     this.searchService.userInfoRequest(this.username)
     this.user = this.searchService.user
   }

@@ -1,3 +1,20 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Navbar</a>
+    <form class="d-flex">
+      <input class="form-control" placeholder="Search by reponame" aria-describedby="button-addon2"
+        [(ngModel)]="reponame" name="reponame" type="search" placeholder="Search for Repositories" aria-label="Search">
+      <button class="btn btn-outline-secondary" type="submit" routerLink="repositories" (click)="findRepos()"><i
+          class="bi bi-search"></i></button>
+    </form>
+    <form>
+      <input class="form-control" placeholder="Search by username" aria-describedby="button-addon2"
+        [(ngModel)]="username" name="username" type="search" placeholder="Search for Users" aria-label="Search">
+      <button class="btn btn-outline-secondary" type="submit" routerLink="users" (click)="findProfile()"
+        type="submit"><i class="bi bi-search"></i></button>
+    </form>
+  </div>
+</nav>
 <div class="container-fluid">
   <div>
     <div class="card shadow p-3 mb-5 bg-white rounded card quote-card">
@@ -26,21 +43,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="card shadow p-3 mb-5 bg-white rounded card quote-card">
-          <div class="cardbody">
-            <form #userForm="ngForm">
-              <div class="input-group" style="width: 13rem">
-                <input type="text" class="form-control" placeholder="Search by username"
-                  aria-describedby="button-addon2" [(ngModel)]="username" name="username"
-                  style="background-color: transparent; color: white;">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="submit" (click)="findProfile(); userForm.reset()"><i
-                      class="bi bi-search"></i></button>
-                </div>
-              </div>
-            </form><br>
           </div>
         </div>
       </div>

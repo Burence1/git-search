@@ -1,3 +1,5 @@
+import { SearchService } from './../../../services/search.service';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  username:any;
+  reponame:any;
 
-  constructor() { }
 
+  constructor(private searchService: SearchService, private router: Router ) { }
+
+ 
   ngOnInit(): void {
   }
 

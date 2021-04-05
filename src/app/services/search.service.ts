@@ -18,6 +18,9 @@ export class SearchService {
   repos: Repos[] = [];
   reponame:string;
   reposByName: RepoName[]=[];
+  ApiKey:any;
+  Apirepo:any;
+  response:any;
 
 
   constructor(private http: HttpClient) {

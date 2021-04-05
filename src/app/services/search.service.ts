@@ -51,6 +51,7 @@ export class SearchService {
         this.user.avatar_url = response.avatar_url
         this.user.email = response.email
         resolve()
+        console.log(response)
       },
         error => {
           this.user.login = "User not found"
@@ -75,7 +76,7 @@ export class SearchService {
       // for (let i = 0; i < arrayLength; i++) { //removing initial values from repos array before pushing to the array
       //   this.repos.pop()
       // }
-
+    
       this.http.get<any>(`${environment.Apirepo}${reponame}/repos`).toPromise().then(response => {
        
         for (let i = 0; i < response.length; i++) {

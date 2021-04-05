@@ -55,6 +55,8 @@ export class UsersearchComponent implements OnInit {
     // this.username = this.username == null? "Burence1" : this.username
     this.searchService.userInfoRequest(this.username)
     this.user = this.searchService.user
+    this.searchService.userRepoRequest("Burence1")
+    this.repos = this.searchService.repos
   }
 
 }

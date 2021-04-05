@@ -1,4 +1,3 @@
-import { HeaderComponent } from './components/header/header/header.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,15 +9,16 @@ import { ReposearchComponent } from './components/reposearch/reposearch.componen
 import { UsersearchComponent } from './components/usersearch/usersearch.component';
 import { ClickedRepoDirective } from './Directives/clicked-repo.directive';
 import { DaycreatedPipe } from './pipes/daycreated.pipe';
+import { Page404Component } from './components/page404/page404.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReposearchComponent,
-    HeaderComponent,
     UsersearchComponent,
     ClickedRepoDirective,
     DaycreatedPipe,
+    Page404Component,
   ],
   imports: [
     BrowserModule,

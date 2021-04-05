@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { NgProgressModule } from '@ngx-progressbar/core';
-import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -27,10 +25,6 @@ import { Page404Component } from './components/page404/page404.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgProgressModule.forRoot(),
-    NgProgressHttpClientModule
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ReposearchComponent } from './components/reposearch/reposearch.component';
 import { UsersearchComponent } from './components/usersearch/usersearch.component';
 import { ClickedRepoDirective } from './Directives/clicked-repo.directive';
+import { DaycreatedPipe } from './pipes/daycreated.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ClickedRepoDirective } from './Directives/clicked-repo.directive';
     HeaderComponent,
     UsersearchComponent,
     ClickedRepoDirective,
+    DaycreatedPipe,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,3 @@
-import { RepoNumber } from './../classes/repo-number';
-import { RepoName } from './../classes/repo-name';
 import { Repos } from './../classes/repos';
 import { Users } from './../classes/users';
 import { environment } from './../../environments/environment';
@@ -19,13 +17,11 @@ export class SearchService {
   repos: Repos[] = [];
   reponame:string;
   repositories=[];
-  reposName: RepoName[]=[];
-  reposNumber: RepoNumber;
 
 
   constructor(private http: HttpClient) {
     this.user = new Users("", "", "", "", 0, 0, 0, new Date(), "", "");
-    this.reposNumber = new RepoNumber(0)
+
   }
  
 
@@ -90,6 +86,7 @@ export class SearchService {
           repo.language = response[i]["language"]
           repo.html_url = response[i]["html_url"]
           repo.forks = response[i]["forks"]
+          repo.updated_at = response[i]["updated_at"]
     
           this.repos.push(repo)
           resolve()

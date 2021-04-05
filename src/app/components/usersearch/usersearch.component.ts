@@ -17,7 +17,7 @@ export class UsersearchComponent implements OnInit {
   reponame: any;
 
   constructor(private searchService: SearchService, private router: Router) {
-    this.username = localStorage.getItem("datas");
+    this.username = localStorage.getItem("username");
     // if (this.username == null) {
     //   this.username = "Burence1"
     // } else {
@@ -40,13 +40,13 @@ export class UsersearchComponent implements OnInit {
    
   
   findRepos() {
-    localStorage.setItem("datas", this.reponame);
+    localStorage.setItem("reponame", this.reponame);
     this.router.navigate(['/repositories']);
     this.reponame = ''
   }
 
   ngOnInit(): void {
-    this.username = localStorage.getItem("datas");
+    this.username = localStorage.getItem("username");
     if(this.username == null) {
       this.username = "Burence1"
     } else {

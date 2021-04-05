@@ -3,6 +3,7 @@ import { Users } from './../classes/users';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { RepoName } from '../classes/repo-name';
 
 
 @Injectable({
@@ -16,7 +17,7 @@ export class SearchService {
   username:string;
   repos: Repos[] = [];
   reponame:string;
-  repositories=[];
+  reposByName: RepoName[]=[];
 
 
   constructor(private http: HttpClient) {
@@ -77,7 +78,7 @@ export class SearchService {
       //   this.repos.pop()
       // }
     
-      this.http.get<any>(`${environment.Apirepo}${reponame}/repos`).toPromise().then(response => {
+      this.http.get<any>(`${environment.ApiKey}${reponame}/repos`).toPromise().then(response => {
        
         for (let i = 0; i < response.length; i++) {
           let repo = new Repos("", "", "", "", 0, new Date());
@@ -101,58 +102,35 @@ export class SearchService {
     })
     return promise
   }
-  // repoByNameRequest(reponame: any) {
-  //   interface repoByNameApiResponse {
-  //     // total_count:number,
-  //     items: []
-  //   }
-  //   let promise = new Promise<void>((resolve, reject) => {
-  //     let arrayLength = this.reposName.length;
-  //     for (let i = 0; i < arrayLength; i++) { //removing initial values from array before pushing to the array
-  //       this.reposName.pop()
-  //     }
-  //     this.http.get<repoByNameApiResponse>(`https://api.github.com/search/repositories?q=${reponame}`).toPromise().then(response => {
-        // this.numberOfRepos.repoCount =response.total_count
-        // console.log("Number of repos",this.numberOfRepos)
-        // this.repositories = response.items
-  //       for (let i = 0; i < response.items.length; i++) {
-  //         let repoByName = new RepoName("", "", "", "", 0, new Date());
-  //         repoByName.name = response.items[i]["name"]
-  //         repoByName.description = response.items[i]["description"]
-  //         repoByName.language = response.items[i]["language"]
-  //         repoByName.html_url = response.items[i]["html_url"]
-  //         repoByName.forks = response.items[i]["forks"]
-  //         repoByName.updated_at = response.items[i]["updated_at"]
-  //         this.reposName.push(repoByName)
-  //       }
-  //       resolve()
-  //        console.log(this.reposName)
-  //     },
-  //       error => {
-  //         // this.numberOfRepos.repoCount= 0; 
-  //         console.log("an error occured")
-  //         reject(error)
-  //       })
-  //   })
-  //   return promise
-  // }
-  // repoByNameNumberRequest(reponame: any) {
-  //   interface repoByNameNumberApiResponse {
-  //     total_count: number
-  //   }
-  //   let promise = new Promise<void>((resolve, reject) => {
-  //     this.http.get<repoByNameNumberApiResponse>(`https://api.github.com/search/repositories?q=${reponame}`).toPromise().then(response => {
-  //       this.reposNumber.total = response.total_count
-  //       console.log("Number of repos", this.reposNumber)
-  //       resolve()
-  //       console.log("Numbers", this.reposNumber.total)
-  //     },
-  //       error => {
-  //         this.reposNumber.total = 0;
-  //         console.log("an error occured")
-  //         reject(error)
-  //       })
-  //   })
-  //   return promise
-  // }
+  
+  repoSearchName(reponame: any) {
+    interface repoByNameApiResponse {
+      items: []
+    }
+    let promise = new Promise<void>((resolve, reject) => {
+      let arrayLength = this.reposByName.length;
+      for (let i = 0; i < arrayLength; i++) { //removing initial values from array before pushing to the array
+        this.reposByName.pop()
+      }
+      this.http.get<repoByNameApiResponse>(`${environment.Apirepo}${reponame}`).toPromise().then(response => {
+        for (let i = 0; i < response.items.length; i++) {
+          let repoByName = new RepoName("", "", "", "", 0, new Date());
+          repoByName.name = response.items[i]["name"]
+          repoByName.description = response.items[i]["description"]
+          repoByName.language = response.items[i]["language"]
+          repoByName.html_url = response.items[i]["html_url"]
+          repoByName.forks = response.items[i]["forks"]
+          repoByName.updated_at = response.items[i]["updated_at"]
+          this.reposByName.push(repoByName)
+        }
+        resolve()
+         console.log(this.reposByName)
+      },
+        error => { 
+          console.log("an error occured")
+          reject(error)
+        })
+    })
+    return promise
+  }
 }

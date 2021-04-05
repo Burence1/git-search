@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,6 +12,7 @@ import { UsersearchComponent } from './components/usersearch/usersearch.componen
 import { ClickedRepoDirective } from './Directives/clicked-repo.directive';
 import { DaycreatedPipe } from './pipes/daycreated.pipe';
 import { Page404Component } from './components/page404/page404.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,11 @@ import { Page404Component } from './components/page404/page404.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgProgressModule.forRoot(),
+    NgProgressHttpClientModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

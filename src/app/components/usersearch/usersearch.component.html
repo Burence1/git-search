@@ -11,7 +11,7 @@
     <form class="d-flex">
       <input class="form-control" placeholder="Search by username" aria-describedby="button-addon2"
         [(ngModel)]="username" name="username" type="search" placeholder="Search for Users" aria-label="Search">
-      <button class="btn btn-outline-secondary" type="submit" routerLink="users" (click)="findProfile()"
+      <button class="btn btn-outline-secondary" type="submit" (click)="findProfile()"
         type="submit"><i class="bi bi-search"></i></button>
     </form>
   </div>

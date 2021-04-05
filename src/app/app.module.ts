@@ -12,7 +12,6 @@ import { UsersearchComponent } from './components/usersearch/usersearch.componen
 import { ClickedRepoDirective } from './Directives/clicked-repo.directive';
 import { DaycreatedPipe } from './pipes/daycreated.pipe';
 import { Page404Component } from './components/page404/page404.component';
-import { from } from 'rxjs';
 
 @NgModule({
   declarations: [

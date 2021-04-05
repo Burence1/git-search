@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/users">L<span><i class="bi bi-github"></i></span><span><i class="bi bi-github"></i></span>K-UP Git</a>
+    <a class="navbar-brand" routerLink="/users">L<span><i class="bi bi-github"></i></span><span><i class="bi bi-github"></i></span>K-Up Git</a>
     <form class="d-flex">
       <a class="navbar-brand" routerLink="/users">Home</a>
       <input class="form-control" placeholder="Search by reponame" aria-describedby="button-addon2"
@@ -26,7 +26,7 @@
                   appClickedRepo>{{repo.name|titlecase}}</a>
               </div>
               <p class="card-text" *ngIf="repo.description">{{repo.description}}</p>
-              <p class="card-text" *ngIf="!repo.description">No description is available for this repository</p>
+              <p class="card-text" *ngIf="!repo.description">No description for this repo</p>
               <small>Last updated on {{repo.updated_at|date}}</small><br>
               <div class="card-bottom">
                 <div *ngIf="repo.language">

@@ -6,3 +6,7 @@
   align-content: space-around;*/
   column-gap: 5rem; 
 }
+.quote-card{
+  width: 15rem;
+  margin-top: 3em;
+}

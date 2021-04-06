@@ -34,7 +34,7 @@ export class SearchService {
       url: string;
       followers: number;
       following: number;
-      public_repos: number; //check this out
+      public_repos: number; 
       created_at: Date;
       avatar_url: string;
       email: string;
@@ -109,7 +109,7 @@ export class SearchService {
     }
     let promise = new Promise<void>((resolve, reject) => {
       let arrayLength = this.reposByName.length;
-      for (let i = 0; i < arrayLength; i++) { //removing initial values from array before pushing to the array
+      for (let i = 0; i < arrayLength; i++) { 
         this.reposByName.pop()
       }
       this.http.get<repoByNameApiResponse>(`${environment.Apirepo}${reponame}`).toPromise().then(response => {
@@ -124,7 +124,6 @@ export class SearchService {
           this.reposByName.push(repoByName)
         }
         resolve()
-         console.log(this.reposByName)
       },
         error => { 
           console.log("an error occured")
